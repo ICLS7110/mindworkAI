@@ -1,4 +1,4 @@
-modules.export = {
+module.exports = {
     env: {
         browser: true,
         es6: true,
@@ -10,11 +10,11 @@ modules.export = {
         SharedArrayBuffer: "readonly",
     },
     parserOptions: {
-        emcaVersion: 2018,
+        ecmaVersion: 2018,
         sourceType: "module",
     },
     rules: {
         quotes: "off",
-        "@typescript-eslint/quotes": "error"
-    }
+        "@typescript-eslint/quotes": "error",
+    },
 };
