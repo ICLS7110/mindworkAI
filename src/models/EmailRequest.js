@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const walletSchema = new Schema(
+const emailSchema = new Schema(
     {
         privyId: {
             type: String,
@@ -17,9 +17,6 @@ const walletSchema = new Schema(
             type: String,
             required: true,
         },
-        walletClientType: {
-            type: String,
-        },
         status: {
             type: String,
             enum: ["active", "approved", "denied"],
@@ -31,6 +28,6 @@ const walletSchema = new Schema(
     }
 );
 
-const Wallet = mongoose.model("Wallet", walletSchema);
+const Email = mongoose.model("Email", emailSchema);
 
-module.exports = Wallet;
+module.exports = Email;

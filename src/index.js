@@ -12,9 +12,16 @@ import CronManager from "./cronManager";
 
 import NodeCache from "node-cache";
 
+import { instrument } from "@socket.io/admin-ui";
+
 import socialRoutes from "./routes/socialRoute";
 import walletRoutes from "./routes/walletRoute";
 import adminRoutes from "./routes/adminRoute";
+import emailRoutes from "./routes/emailRoute";
+
+import SocialModel from "./models/SocialRequest";
+import WalletModel from "./models/WalletRequest";
+import EmailModel from "./models/EmailRequest";
 
 class Server {
     constructor({ port }) {
@@ -23,8 +30,7 @@ class Server {
         this.server = require("http").createServer(this.express);
         this.io = require("socket.io")(this.server, {
             cors: {
-                origins: "*:*",
-                methods: ["GET", "POST"],
+                origin: ["http://localhost:3000", "*"],
                 credentials: true,
             },
         });
@@ -34,7 +40,7 @@ class Server {
     }
     async start() {
         this.connectDatabase();
-        // socketService(this.io);
+        this.socketService(this.io);
         this.initSessions();
         this.initCache();
         this.initMiddleware();
@@ -51,6 +57,48 @@ class Server {
         this.initErrorRoute(); // Move error route handler here
         this.initErrorHandler(); // Move error handler here
     }
+
+    // socket service
+    async socketService(io) {
+        io.on("connection", (socket) => {
+            console.log("Socket Connected");
+
+            // monitor approval or denial of email request by admin
+            EmailModel.watch().on("change", async (data) => {
+                const userRequest = await EmailModel.findById(
+                    data.documentKey._id
+                );
+                socket.emit("email-request", userRequest);
+            });
+
+            // monitor approval or denial of social request by admin
+            SocialModel.watch().on("change", async (data) => {
+                const userRequest = await SocialModel.findById(
+                    data.documentKey._id
+                );
+                socket.emit("social-request", userRequest);
+            });
+
+            // monitor approval or denial of wallet request by admin
+            WalletModel.watch().on("change", async (data) => {
+                const userRequest = await WalletModel.findById(
+                    data.documentKey._id
+                );
+                socket.emit("wallet-request", userRequest);
+            });
+
+            socket.on("disconnect", () => {
+                console.log("Socket Disconnected!");
+            });
+        });
+
+        // admin ui
+        instrument(io, {
+            auth: false,
+            mode: "development",
+        });
+    }
+
     async connectDatabase() {
         await mongoose
             .connect(process.env.MONGO_URL, {
@@ -99,6 +147,7 @@ class Server {
         // Routes for login request using social & wallet requests
         this.express.use("/api/social-request", socialRoutes);
         this.express.use("/api/wallet-request", walletRoutes);
+        this.express.use("/api/email-request", emailRoutes);
 
         this.express.use("/home", (req, res, next) => {
             res.send({ message: "Not Found" });

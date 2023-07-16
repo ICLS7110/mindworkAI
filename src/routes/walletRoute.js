@@ -15,7 +15,8 @@ router.get("/", async (req, res) => {
 // get one user
 router.get("/:id", async (req, res) => {
     try {
-        const user = await Wallet.findById(req.params.id);
+        // find by privyId
+        const user = await Wallet.findOne({ privyId: req.params.id });
         res.status(200).json(user);
     } catch (err) {
         res.status(500).json(err);

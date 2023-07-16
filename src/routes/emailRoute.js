@@ -1,11 +1,11 @@
-const Social = require("../models/SocialRequest");
+const Email = require("../models/EmailRequest");
 
 const router = require("express").Router();
 
 // get all users
 router.get("/", async (req, res) => {
     try {
-        const users = await Social.find();
+        const users = await Email.find();
         res.status(200).json(users);
     } catch (err) {
         res.status(500).json(err);
@@ -15,7 +15,8 @@ router.get("/", async (req, res) => {
 // get one user
 router.get("/:id", async (req, res) => {
     try {
-        const user = await Social.findOne({ privyId: req.params.id });
+        // find by privyId
+        const user = await Email.findOne({ privyId: req.params.id });
         res.status(200).json(user);
     } catch (err) {
         res.status(500).json(err);
@@ -25,7 +26,7 @@ router.get("/:id", async (req, res) => {
 // create new user
 router.post("/", async (req, res) => {
     try {
-        const newUser = new Social(req.body);
+        const newUser = new Email(req.body);
         const user = await newUser.save();
         res.status(200).json(user);
     } catch (err) {
@@ -38,7 +39,7 @@ router.post("/", async (req, res) => {
 // update user
 router.put("/:id", async (req, res) => {
     try {
-        const updatedUser = await Social.findByIdAndUpdate(
+        const updatedUser = await Email.findByIdAndUpdate(
             req.params.id,
             {
                 $set: req.body,
