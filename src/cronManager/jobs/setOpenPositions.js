@@ -1,33 +1,47 @@
 const setOpenPositions = async (exchange, openPositions) => {
     try {
-        const securities = await exchange.fetchPositions();
-        let actions = [];
+        // load markets before fetching positions
+        await exchange.loadMarkets();
 
-        // Find new positions.
-        securities.forEach((security) => {
-            const posIndex = openPositions.findIndex(
-                (obj) => obj.timestamp === security.timestamp
-            );
-
-            if (posIndex === -1) {
-                const newPosition = {
-                    timestamp: security.timestamp,
-                    tradeSize: security.contractSize * security.contracts,
-                    tradePair: security.symbol,
-                    profit: security.unrealizedPnl,
-                    side: security.side,
-                };
-                openPositions.push(newPosition);
-
-                // Added the action to send to the frontend.
-                actions.push({
-                    type: "insert",
-                    position: newPosition,
-                });
-            }
+        // fetch all open USDT positions
+        const securities = await exchange.fetchPositions(undefined, {
+            settle: "USDT",
         });
 
-        //Find the positions which should be removed.
+        let actions = [];
+
+        // Find new positions and add them to the openPositions array
+        securities
+            ?.filter((security) => security?.info?.size !== "0")
+            ?.forEach((security) => {
+                // to find the index of the position in the openPositions array
+                const posIndex = openPositions.findIndex(
+                    (obj) =>
+                        obj.tradePair === security.symbol &&
+                        obj.profit === security.unrealizedPnl &&
+                        obj.tradeSize ===
+                        security.contractSize * security.contracts
+                );
+
+                // if the position is not in the openPositions array, add it
+                if (posIndex === -1) {
+                    const newPosition = {
+                        tradeSize: security.contractSize * security.contracts,
+                        tradePair: security.symbol,
+                        profit: security.unrealizedPnl || 0,
+                        side: security.side,
+                    };
+                    openPositions.push(newPosition);
+
+                    // Added the action to send to the frontend
+                    actions.push({
+                        type: "insert",
+                        position: newPosition,
+                    });
+                }
+            });
+
+        //Find the positions which should be removed
         for (let i = 0; i < openPositions.length; i++) {
             const openPosIndex = securities.findIndex(
                 (obj) => obj.timestamp === openPositions[i].timestamp

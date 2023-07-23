@@ -7,26 +7,35 @@ import ccxt from "ccxt";
 class CronManager {
   constructor(io) {
     const openPositions = [];
-    const exchange = new ccxt.kucoinfutures({
-      adjustForTimeDifference: true,
+
+    const exchange = new ccxt.phemex({
+      enableRateLimit: true,
       apiKey: process.env.CCXT_API_KEY,
       secret: process.env.CCXT_SECRET,
-      password: process.env.CCXT_PASSWORD,
+      options: {
+        defaultType: "swap",
+      },
     });
 
-    io.sockets.emit(ACTIONS.SEND_OPEN_POSITIONS, { actions: [], openPositions });
+    io.sockets.emit(ACTIONS.SEND_OPEN_POSITIONS, {
+      actions: [],
+      openPositions,
+    });
 
     // un comment on dedicated server
     cron.schedule("* * * * *", async () => {
       try {
         const actions = await setOpenPositions(exchange, openPositions);
-        openPositions.forEach(async openPosition => {
+        openPositions.forEach(async (openPosition) => {
           const newPositions = await Position.create(openPosition);
           await newPositions.save();
         });
-        
+
         // Send the open positions and actions to the frontend.
-        io.sockets.emit(ACTIONS.SEND_OPEN_POSITIONS, { actions, openPositions });
+        io.sockets.emit(ACTIONS.SEND_OPEN_POSITIONS, {
+          actions,
+          openPositions,
+        });
       } catch (error) {
         console.log(error);
       }
@@ -34,10 +43,20 @@ class CronManager {
 
     io.on("connection", (socket) => {
       socket.on(ACTIONS.GET_OPEN_POSITIONS, (obj) => {
-        io.sockets.emit(ACTIONS.SEND_OPEN_POSITIONS, { actions: [], openPositions });
-      })
-    })
+        io.sockets.emit(ACTIONS.SEND_OPEN_POSITIONS, {
+          actions: [],
+          openPositions,
+        });
+      });
+    });
   }
 }
 
 export default CronManager;
+
+// const exchange = new ccxt.kucoinfutures({
+//   adjustForTimeDifference: true,
+//   apiKey: process.env.CCXT_API_KEY,
+//   secret: process.env.CCXT_SECRET,
+//   password: process.env.CCXT_PASSWORD,
+// });
