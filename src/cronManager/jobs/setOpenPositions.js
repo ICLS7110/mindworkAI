@@ -20,7 +20,7 @@ const setOpenPositions = async (exchange, openPositions) => {
                         obj.tradePair === security.symbol &&
                         obj.profit === security.unrealizedPnl &&
                         obj.tradeSize ===
-                        security.contractSize * security.contracts
+                            security.contractSize * security.contracts
                 );
 
                 // if the position is not in the openPositions array, add it
