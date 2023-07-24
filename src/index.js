@@ -30,7 +30,7 @@ class Server {
         this.server = require("http").createServer(this.express);
         this.io = require("socket.io")(this.server, {
             cors: {
-                origin: ["http://localhost:3000", "*"],
+                origin: ["http://localhost:3000", "https://mindwork-ai-3e6b47d54f8a.herokuapp.com"],
                 credentials: true,
             },
         });
