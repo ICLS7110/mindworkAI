@@ -6,6 +6,10 @@ const positionSchema = new Schema(
     tradePair: {
       type: String,
     },
+    contracts: {  // new field
+      type: Number,
+      default: 0,
+    },
     tradeSize: {
       type: Number,
       default: 0,
