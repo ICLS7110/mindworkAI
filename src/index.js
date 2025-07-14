@@ -8,7 +8,7 @@ import session from "express-session";
 import cors from "cors";
 
 import { profileModule } from "./modules";
-import CronManager from "./cronManager";
+// import CronManager from "./cronManager";
 
 import NodeCache from "node-cache";
 
@@ -46,7 +46,7 @@ class Server {
         this.initMiddleware();
         this.forceSecure();
         // this.insertHelpers();
-        this.cronManager = new CronManager(this.io);
+        // this.cronManager = new CronManager(this.io);
         this.publicRoot = path.join("public");
         this.express.use(express.static(this.publicRoot));
         this.initPublicRoutes();
