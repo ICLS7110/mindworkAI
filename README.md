@@ -2,7 +2,7 @@
 
 ## Overview
 
-MindWorks AI is a crypto trading and investment platform simulation built with the [MERN](https://www.mongodb.com/mern-stack) stack and utilizing [Socket.IO](https://socket.io/) for real time price updates. 
+MindWorks AI is a crypto trading and investment platform built with the [MERN](https://www.mongodb.com/mern-stack) stack and utilizing [Socket.IO](https://socket.io/) for real time price updates. 
 
 
 ## System Architecture
