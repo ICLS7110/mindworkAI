@@ -19,12 +19,12 @@ Big picture view of the application at a glance.
 
 ## Tech
 
-This project provides a minimal setup to get React working in [Vite](https://github.com/vitejs/vite-plugin-react/tree/main) with HMR and some ESLint rules. This project utilizes the [MERN](https://www.mongodb.com/mern-stack) stack for Back-End and [Socket.IO](https://socket.io/) library. For authentication, a [JWT](https://jwt.io/) solution was implemented.
+This project utilizes the [MERN](https://www.mongodb.com/mern-stack) stack for Back-End and [Socket.IO](https://socket.io/) library. For authentication, a [JWT](https://jwt.io/) solution was implemented.
 
 **Front-End**
 
 - [React](https://reactjs.org/)
-- [Vite](https://vite.dev/)
+- [Redux](https://redux.js.org/)
 - [TailwindCSS](https://tailwindcss.com/)
 - [Chart.JS](https://www.chartjs.org/)
 
@@ -62,14 +62,14 @@ First, install the necessary packages via:
 npm install
 ```
 
-Now you can spin up the frontend. Default port is `5173` for a [React + Vite] project.
+Now you can spin up the frontend. Default port is `3000` for a [React] project.
 
 ```bash
 # start app
 npm run dev
 ```
 
-Open your browser and visit http://localhost:5173/ to access the app
+Open your browser and visit http://localhost:3000/ to access the app
 
 **Back-End Setup**
 

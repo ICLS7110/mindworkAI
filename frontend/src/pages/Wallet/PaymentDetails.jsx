@@ -1,23 +1,23 @@
-import { Button } from "@/components/ui/button";
+import { Button } from "../../components/ui/button";
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
+} from "../../components/ui/card";
 import {
   Dialog,
   DialogContent,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog";
+} from "../../components/ui/dialog";
 import PaymentDetailsForm from "./PaymentDetailsForm";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
-import { getPaymentDetails } from "@/Redux/Withdrawal/Action";
-import { maskAccountNumber } from "@/Util/maskAccountNumber";
+import { getPaymentDetails } from "../../Redux/Withdrawal/Action";
+import { maskAccountNumber } from "../../Util/maskAccountNumber";
 
 const PaymentDetails = () => {
   const dispatch = useDispatch();

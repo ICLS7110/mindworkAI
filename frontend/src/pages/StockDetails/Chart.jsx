@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import ReactApexChart from "react-apexcharts";
+// import ReactApexChart from "react-apexcharts";
 import fetchData, { dataType } from "../Home/fetchMarketData";
 import { convertToUnixTimestamp } from "./ConvertToChartData";
 
@@ -163,12 +163,12 @@ const Chart = () => {
 
   return (
     <div className="stock-chart">
-      <ReactApexChart
+      {/*<ReactApexChart
         options={options}
         series={series}
         type="line"
         height={640}
-      />
+      />*/}
     </div>
   );
 };

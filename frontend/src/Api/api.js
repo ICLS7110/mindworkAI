@@ -1,7 +1,7 @@
 
 import axios from 'axios';
 const DEPLOYED='https://mindworksai-be-5687b58bff1a.herokuapp.com/'
-const LOCALHOST='http://localhost:3004'
+const LOCALHOST='http://localhost:8000'
 
 export const API_BASE_URL = LOCALHOST
 

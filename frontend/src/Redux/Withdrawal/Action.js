@@ -1,6 +1,6 @@
 // withdrawalActions.js
 
-import api from '@/Api/api';
+import api from '../../Api/api';
 import {
   WITHDRAWAL_REQUEST,
   WITHDRAWAL_SUCCESS,

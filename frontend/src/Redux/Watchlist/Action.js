@@ -1,5 +1,5 @@
 import * as types from './ActionTypes';
-import api from '@/Api/api';
+import api from '../../Api/api';
 
 // Action Creators
 export const getUserWatchlist = () => async (dispatch) => {

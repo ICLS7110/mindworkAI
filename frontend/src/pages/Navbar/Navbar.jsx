@@ -1,5 +1,5 @@
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
+import { Button } from "../../components/ui/button";
+import { Input } from "../../components/ui/input";
 import {
   AvatarIcon,
   DragHandleHorizontalIcon,
@@ -12,9 +12,9 @@ import {
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-} from "@/components/ui/sheet";
+} from "../../components/ui/sheet";
 import { useNavigate } from "react-router-dom";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Avatar, AvatarFallback, AvatarImage } from "../../components/ui/avatar";
 import { useState } from "react";
 import { useSelector } from "react-redux";
 

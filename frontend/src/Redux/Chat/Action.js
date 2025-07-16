@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import api from "@/Api/api";
+import api from "../../Api/api";
 import {
   CHAT_BOT_FAILURE,
   CHAT_BOT_REQUEST,

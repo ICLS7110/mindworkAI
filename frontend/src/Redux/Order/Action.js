@@ -1,4 +1,4 @@
-import api from '@/Api/api';
+import api from '../../Api/api';
 import * as types from './ActionTypes';
 
 // Action Creators

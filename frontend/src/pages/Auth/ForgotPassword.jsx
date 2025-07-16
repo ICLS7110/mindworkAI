@@ -1,18 +1,18 @@
-import { Input } from "@/components/ui/input";
+import { Input } from "../../components/ui/input";
 // import "./Login.css";
-import { Button } from "@/components/ui/button";
+import { Button } from "../../components/ui/button";
 import {
   Form,
   FormControl,
   FormField,
   FormItem,
   FormMessage,
-} from "@/components/ui/form";
+} from "../../components/ui/form";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { useDispatch } from "react-redux";
-import { sendResetPassowrdOTP } from "@/Redux/Auth/Action";
+import { sendResetPassowrdOTP } from "../../Redux/Auth/Action";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 

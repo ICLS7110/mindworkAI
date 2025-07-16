@@ -2,10 +2,10 @@ import {
   getAllWithdrawalRequest,
   getWithdrawalHistory,
   proceedWithdrawal,
-} from "@/Redux/Withdrawal/Action";
-import { readableTimestamp } from "@/Util/readbaleTimestamp";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
+} from "../../Redux/Withdrawal/Action";
+import { readableTimestamp } from "../../Util/readbaleTimestamp";
+import { Badge } from "../../components/ui/badge";
+import { Button } from "../../components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -13,7 +13,7 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+} from "../../components/ui/dropdown-menu";
 
 import {
   Table,
@@ -22,7 +22,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/ui/table";
+} from "../../components/ui/table";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 

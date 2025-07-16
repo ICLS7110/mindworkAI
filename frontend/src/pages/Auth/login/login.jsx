@@ -1,24 +1,24 @@
-import { Input } from "@/components/ui/input";
+import { Input } from "../../../components/ui/input";
 // import "./Login.css";
-import { Button } from "@/components/ui/button";
+import { Button } from "../../../components/ui/button";
 import {
   Form,
   FormControl,
   FormField,
   FormItem,
   FormMessage,
-} from "@/components/ui/form";
+} from "../../../components/ui/form";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { useDispatch, useSelector } from "react-redux";
-import { login } from "@/Redux/Auth/Action";
+import { login } from "../../../Redux/Auth/Action";
 import { useNavigate } from "react-router-dom";
-import { Skeleton } from "@/components/ui/skeleton";
-import SpinnerBackdrop from "@/components/custome/SpinnerBackdrop";
-// import { toast } from "@/components/ui/use-toast";
-import { ToastAction } from "@/components/ui/toast";
-import { useToast } from "@/components/ui/use-toast";
+import { Skeleton } from "../../../components/ui/skeleton";
+import SpinnerBackdrop from "../../../components/custome/SpinnerBackdrop";
+// import { toast } from "../../../components/ui/use-toast";
+import { ToastAction } from "../../../components/ui/toast";
+import { useToast } from "../../../components/ui/use-toast";
 
 const formSchema = z.object({
   email: z.string().email("Invalid email address"),

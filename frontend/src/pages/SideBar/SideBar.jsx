@@ -1,6 +1,6 @@
-import { logout } from "@/Redux/Auth/Action";
-import { Button } from "@/components/ui/button";
-import { SheetClose } from "@/components/ui/sheet";
+import { logout } from "../../Redux/Auth/Action";
+import { Button } from "../../components/ui/button";
+import { SheetClose } from "../../components/ui/sheet";
 import {
   ExitIcon,
   HandIcon,

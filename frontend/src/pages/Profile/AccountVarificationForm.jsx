@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
-import { sendVerificationOtp, verifyOtp } from "@/Redux/Auth/Action";
-import { Button } from "@/components/ui/button";
+import { sendVerificationOtp, verifyOtp } from "../../Redux/Auth/Action";
+import { Button } from "../../components/ui/button";
 import {
   Dialog,
   DialogClose,
@@ -9,13 +9,13 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog";
+} from "../../components/ui/dialog";
 import {
   InputOTP,
   InputOTPGroup,
   InputOTPSeparator,
   InputOTPSlot,
-} from "@/components/ui/input-otp";
+} from "../../components/ui/input-otp";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Auth from "../Auth/Auth";

@@ -1,17 +1,17 @@
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "../../components/ui/badge";
+import { Button } from "../../components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "../../components/ui/card";
 import {
   Dialog,
   DialogContent,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog";
+} from "../../components/ui/dialog";
 import { useDispatch, useSelector } from "react-redux";
 import AccountVarificationForm from "./AccountVarificationForm";
 import { VerifiedIcon } from "lucide-react";
-import { enableTwoStepAuthentication, verifyOtp } from "@/Redux/Auth/Action";
+import { enableTwoStepAuthentication, verifyOtp } from "../../Redux/Auth/Action";
 
 const Profile = () => {
   const { auth } = useSelector((store) => store);

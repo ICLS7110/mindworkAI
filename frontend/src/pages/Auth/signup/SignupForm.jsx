@@ -1,20 +1,20 @@
 /* eslint-disable no-unused-vars */
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
+import { Input } from "../../../components/ui/input";
+import { Button } from "../../../components/ui/button";
 import {
   Form,
   FormControl,
   FormField,
   FormItem,
   FormMessage,
-} from "@/components/ui/form";
+} from "../../../components/ui/form";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { register } from "@/Redux/Auth/Action";
-import SpinnerBackdrop from "@/components/custome/SpinnerBackdrop";
+import { register } from "../../../Redux/Auth/Action";
+import SpinnerBackdrop from "../../../components/custome/SpinnerBackdrop";
 
 const formSchema = z.object({
   fullName: z.string().nonempty("Full name is required"),

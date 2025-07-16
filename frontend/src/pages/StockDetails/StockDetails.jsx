@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-constant-condition */
-import { Button } from "@/components/ui/button";
+import { Button } from "../../components/ui/button";
 import {
   BookmarkFilledIcon,
   BookmarkIcon,
@@ -15,18 +15,18 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog";
+} from "../../components/ui/dialog";
 import TreadingForm from "./TreadingForm";
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchCoinById, fetchCoinDetails } from "@/Redux/Coin/Action";
-import { Avatar, AvatarImage } from "@/components/ui/avatar";
-import { existInWatchlist } from "@/Util/existInWatchlist";
-import { addItemToWatchlist, getUserWatchlist } from "@/Redux/Watchlist/Action";
-import { getAssetDetails } from "@/Redux/Assets/Action";
-import { getUserWallet } from "@/Redux/Wallet/Action";
-import SpinnerBackdrop from "@/components/custome/SpinnerBackdrop";
+import { fetchCoinById, fetchCoinDetails } from "../../Redux/Coin/Action";
+import { Avatar, AvatarImage } from "../../components/ui/avatar";
+import { existInWatchlist } from "../../Util/existInWatchlist";
+import { addItemToWatchlist, getUserWatchlist } from "../../Redux/Watchlist/Action";
+import { getAssetDetails } from "../../Redux/Assets/Action";
+import { getUserWallet } from "../../Redux/Wallet/Action";
+import SpinnerBackdrop from "../../components/custome/SpinnerBackdrop";
 
 const StockDetails = () => {
   const { id } = useParams();

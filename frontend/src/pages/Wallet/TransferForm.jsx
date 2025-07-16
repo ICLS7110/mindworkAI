@@ -1,7 +1,7 @@
-import { transferMoney } from "@/Redux/Wallet/Action";
-import { Button } from "@/components/ui/button";
-import { DialogClose } from "@/components/ui/dialog";
-import { Input } from "@/components/ui/input";
+import { transferMoney } from "../../Redux/Wallet/Action";
+import { Button } from "../../components/ui/button";
+import { DialogClose } from "../../components/ui/dialog";
+import { Input } from "../../components/ui/input";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 

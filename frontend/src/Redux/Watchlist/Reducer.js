@@ -1,4 +1,4 @@
-import { existInWatchlist } from "@/Util/existInWatchlist";
+import { existInWatchlist } from "../../Util/existInWatchlist";
 import * as types from "./ActionTypes";
 
 const initialState = {

@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
-import ReactApexChart from "react-apexcharts";
+// import ReactApexChart from "react-apexcharts";
 import { convertToUnixTimestamp } from "./ConvertToChartData";
-import { Button } from "@/components/ui/button";
+import { Button } from "../../components/ui/button";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchMarketChart } from "@/Redux/Coin/Action";
-import SpinnerBackdrop from "@/components/custome/SpinnerBackdrop";
+import { fetchMarketChart } from "../../Redux/Coin/Action";
+import SpinnerBackdrop from "../../components/custome/SpinnerBackdrop";
 
 const timeSeries = [
   {
@@ -146,12 +146,12 @@ const StockChart = ({ coinId }) => {
           ))}
         </div>
         <div id="chart-timelines">
-          <ReactApexChart
+          {/*<ReactApexChart
             options={options}
             series={series}
             type="area"
             height={450}
-          />
+          />*/}
         </div>
       </div>
       {/* <div id="html-dist"></div> */}

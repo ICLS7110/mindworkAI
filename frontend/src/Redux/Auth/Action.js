@@ -1,6 +1,6 @@
 import axios from "axios";
 import * as actionTypes from "./ActionTypes";
-import api, { API_BASE_URL } from "@/Api/api";
+import api, { API_BASE_URL } from "../../Api/api";
 
 export const register = (userData) => async (dispatch) => {
   dispatch({ type: actionTypes.REGISTER_REQUEST });

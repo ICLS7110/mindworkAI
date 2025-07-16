@@ -1,9 +1,9 @@
-import { paymentHandler } from "@/Redux/Wallet/Action";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import { Skeleton } from "@/components/ui/skeleton";
+import { paymentHandler } from "../../Redux/Wallet/Action";
+import { Button } from "../../components/ui/button";
+import { Input } from "../../components/ui/input";
+import { Label } from "../../components/ui/label";
+import { RadioGroup, RadioGroupItem } from "../../components/ui/radio-group";
+import { Skeleton } from "../../components/ui/skeleton";
 import { DotFilledIcon } from "@radix-ui/react-icons";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";

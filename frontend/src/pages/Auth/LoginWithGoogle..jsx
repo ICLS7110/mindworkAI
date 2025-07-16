@@ -1,4 +1,4 @@
-import { Button } from '@/components/ui/button';
+import { Button } from '../../components/ui/button';
 import { useState } from 'react';
 
 const LoginWithGoogle = () => {
@@ -6,7 +6,7 @@ const LoginWithGoogle = () => {
 
   const handleGoogleLogin = async () => {
     try {
-      const response = await fetch('http://localhost:5454/login/google');
+      const response = await fetch('http://localhost:8000/api/login/google');
       const data = await response.json();
       // Check if token exists in response
       if (data.token) {

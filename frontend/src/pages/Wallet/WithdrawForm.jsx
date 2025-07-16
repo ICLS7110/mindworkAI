@@ -1,13 +1,13 @@
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
+import { Button } from "../../components/ui/button";
+import { Input } from "../../components/ui/input";
 
 import { useState } from "react";
 
 import "./WithdrawForm.css";
 import { useDispatch, useSelector } from "react-redux";
-import { withdrawalRequest } from "@/Redux/Withdrawal/Action";
-import { DialogClose } from "@/components/ui/dialog";
-import { maskAccountNumber } from "@/Util/maskAccountNumber";
+import { withdrawalRequest } from "../../Redux/Withdrawal/Action";
+import { DialogClose } from "../../components/ui/dialog";
+import { maskAccountNumber } from "../../Util/maskAccountNumber";
 import { useNavigate } from "react-router-dom";
 
 const WithdrawForm = () => {

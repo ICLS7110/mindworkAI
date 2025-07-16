@@ -1,5 +1,5 @@
-import { Avatar, AvatarImage } from "@/components/ui/avatar";
-import { ScrollArea } from "@/components/ui/scroll-area";
+import { Avatar, AvatarImage } from "../../components/ui/avatar";
+import { ScrollArea } from "../../components/ui/scroll-area";
 import {
   Table,
   TableBody,
@@ -9,7 +9,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/ui/table";
+} from "../../components/ui/table";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 

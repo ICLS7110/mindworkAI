@@ -2,16 +2,16 @@ import {
   depositMoney,
   getUserWallet,
   getWalletTransactions,
-} from "@/Redux/Wallet/Action";
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+} from "../../Redux/Wallet/Action";
+import { Avatar, AvatarFallback } from "../../components/ui/avatar";
+import { Card, CardContent, CardHeader, CardTitle } from "../../components/ui/card";
 import {
   Dialog,
   DialogContent,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog";
+} from "../../components/ui/dialog";
 import {
   CopyIcon,
   DownloadIcon,
@@ -26,9 +26,9 @@ import { useDispatch, useSelector } from "react-redux";
 import TopupForm from "./TopupForm";
 import TransferForm from "./TransferForm";
 import WithdrawForm from "./WithdrawForm";
-import { getPaymentDetails } from "@/Redux/Withdrawal/Action";
+import { getPaymentDetails } from "../../Redux/Withdrawal/Action";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
-import SpinnerBackdrop from "@/components/custome/SpinnerBackdrop";
+import SpinnerBackdrop from "../../components/custome/SpinnerBackdrop";
 
 
 function useQuery() {

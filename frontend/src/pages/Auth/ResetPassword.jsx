@@ -1,27 +1,27 @@
-import { Input } from "@/components/ui/input";
+import { Input } from "../../components/ui/input";
 // import "./Login.css";
-import { Button } from "@/components/ui/button";
+import { Button } from "../../components/ui/button";
 import {
   Form,
   FormControl,
   FormField,
   FormItem,
   FormMessage,
-} from "@/components/ui/form";
+} from "../../components/ui/form";
 import { useForm } from "react-hook-form";
 // import { zodResolver } from "@hookform/resolvers/zod";
 import { yupResolver } from "@hookform/resolvers/yup";
 // import { z } from "zod";
 import { useDispatch } from "react-redux";
-import { verifyResetPassowrdOTP } from "@/Redux/Auth/Action";
+import { verifyResetPassowrdOTP } from "../../Redux/Auth/Action";
 import { useNavigate, useParams } from "react-router-dom";
-import { Card } from "@/components/ui/card";
+import { Card } from "../../components/ui/card";
 import {
   InputOTP,
   InputOTPGroup,
   InputOTPSeparator,
   InputOTPSlot,
-} from "@/components/ui/input-otp";
+} from "../../components/ui/input-otp";
 
 import * as yup from "yup";
 

@@ -1,15 +1,15 @@
-import { twoStepVerification } from "@/Redux/Auth/Action";
-import CustomeToast from "@/components/custome/CustomeToast";
-import { Avatar, AvatarImage } from "@/components/ui/avatar";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
+import { twoStepVerification } from "../../Redux/Auth/Action";
+import CustomeToast from "../../components/custome/CustomeToast";
+import { Avatar, AvatarImage } from "../../components/ui/avatar";
+import { Button } from "../../components/ui/button";
+import { Card, CardContent, CardHeader } from "../../components/ui/card";
+import { Input } from "../../components/ui/input";
 import {
   InputOTP,
   InputOTPGroup,
   InputOTPSeparator,
   InputOTPSlot,
-} from "@/components/ui/input-otp";
+} from "../../components/ui/input-otp";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";

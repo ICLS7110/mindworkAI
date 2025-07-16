@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import { useEffect, useRef, useState } from "react";
 import { AssetTable } from "./AssetTable";
-import { Button } from "@/components/ui/button";
+import { Button } from "../../components/ui/button";
 import StockChart from "../StockDetails/StockChart";
 import {
   ChatBubbleIcon,
@@ -15,7 +15,7 @@ import {
   fetchCoinList,
   fetchTreadingCoinList,
   getTop50CoinList,
-} from "@/Redux/Coin/Action";
+} from "../../Redux/Coin/Action";
 import {
   Pagination,
   PaginationContent,
@@ -23,7 +23,7 @@ import {
   PaginationItem,
   PaginationLink,
   PaginationNext,
-} from "@/components/ui/pagination";
+} from "../../components/ui/pagination";
 import { MessageCircle } from "lucide-react";
 import {
   Dialog,
@@ -32,12 +32,12 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog";
-import { Input } from "@/components/ui/input";
-import { Avatar, AvatarImage } from "@/components/ui/avatar";
-import { sendMessage } from "@/Redux/Chat/Action";
-import { ScrollArea } from "@/components/ui/scroll-area";
-import SpinnerBackdrop from "@/components/custome/SpinnerBackdrop";
+} from "../../components/ui/dialog";
+import { Input } from "../../components/ui/input";
+import { Avatar, AvatarImage } from "../../components/ui/avatar";
+import { sendMessage } from "../../Redux/Chat/Action";
+import { ScrollArea } from "../../components/ui/scroll-area";
+import SpinnerBackdrop from "../../components/custome/SpinnerBackdrop";
 
 const Home = () => {
   const dispatch = useDispatch();

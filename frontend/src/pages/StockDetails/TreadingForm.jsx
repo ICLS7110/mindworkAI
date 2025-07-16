@@ -1,10 +1,10 @@
-import { getAssetDetails } from "@/Redux/Assets/Action";
-import { payOrder } from "@/Redux/Order/Action";
-import { Avatar, AvatarImage } from "@/components/ui/avatar";
-import { Button } from "@/components/ui/button";
-import { DialogClose } from "@/components/ui/dialog";
+import { getAssetDetails } from "../../Redux/Assets/Action";
+import { payOrder } from "../../Redux/Order/Action";
+import { Avatar, AvatarImage } from "../../components/ui/avatar";
+import { Button } from "../../components/ui/button";
+import { DialogClose } from "../../components/ui/dialog";
 
-import { Input } from "@/components/ui/input";
+import { Input } from "../../components/ui/input";
 import { DotIcon } from "@radix-ui/react-icons";
 import { DollarSign } from "lucide-react";
 import { useEffect, useState } from "react";

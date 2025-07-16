@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-import { addItemToWatchlist, getUserWatchlist } from "@/Redux/Watchlist/Action";
+import { addItemToWatchlist, getUserWatchlist } from "../../Redux/Watchlist/Action";
 import { useDispatch, useSelector } from "react-redux";
 import {
   Table,
@@ -9,11 +9,11 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/ui/table";
-import { ScrollArea } from "@/components/ui/scroll-area";
-import { Avatar, AvatarImage } from "@/components/ui/avatar";
+} from "../../components/ui/table";
+import { ScrollArea } from "../../components/ui/scroll-area";
+import { Avatar, AvatarImage } from "../../components/ui/avatar";
 import { useNavigate } from "react-router-dom";
-import { Button } from "@/components/ui/button";
+import { Button } from "../../components/ui/button";
 import { BookmarkFilledIcon } from "@radix-ui/react-icons";
 
 const Watchlist = () => {
