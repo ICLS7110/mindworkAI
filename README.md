@@ -79,7 +79,7 @@ First, install the necessary packages via:
 npm install
 ```
 
-Now you can spin up the backend. Default port is `3004`. 
+Now you can spin up the backend. Default port is `8000`. 
 
 ```bash
 # start server
