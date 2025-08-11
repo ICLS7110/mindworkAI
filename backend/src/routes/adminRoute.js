@@ -1,4 +1,4 @@
-const Admin = require("../models/admin.model");
+const Admin = require("../models/AdminModel");
 const { default: generateToken } = require("../utils/generateToken");
 
 const router = require("express").Router();

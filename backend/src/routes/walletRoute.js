@@ -1,4 +1,4 @@
-const Wallet = require("../models/wallet-request");
+const Wallet = require("../models/WalletRequest");
 
 const router = require("express").Router();
 

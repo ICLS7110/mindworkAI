@@ -7,21 +7,21 @@ import path from "path";
 import session from "express-session";
 import cors from "cors";
 
-// import { profileModule } from "./modules";
+import { profileModule } from "./modules";
 import CronManager from "./cronManager";
 
 import NodeCache from "node-cache";
 
 import { instrument } from "@socket.io/admin-ui";
 
-import socialRoutes from "./routes/social.routes";
-import walletRoutes from "./routes/wallet.routes";
-import adminRoutes from "./routes/admin.routes";
-import emailRoutes from "./routes/email.routes";
+import socialRoutes from "./routes/socialRoute";
+import walletRoutes from "./routes/walletRoute";
+import adminRoutes from "./routes/adminRoute";
+import emailRoutes from "./routes/emailRoute";
 
-import SocialModel from "./models/social-request";
-import WalletModel from "./models/wallet-request";
-import EmailModel from "./models/email-request";
+import SocialModel from "./models/SocialRequest";
+import WalletModel from "./models/WalletRequest";
+import EmailModel from "./models/EmailRequest";
 
 class Server {
     constructor({ port }) {
@@ -30,7 +30,7 @@ class Server {
         this.server = require("http").createServer(this.express);
         this.io = require("socket.io")(this.server, {
             cors: {
-                origin: ["http://localhost:8000", "https://mindwork-ai-3e6b47d54f8a.herokuapp.com"],
+                origin: ["http://localhost:3000", "https://mindwork-ai-3e6b47d54f8a.herokuapp.com"],
                 credentials: true,
             },
         });
@@ -106,7 +106,7 @@ class Server {
                 useUnifiedTopology: true,
                 // autoIndex: true,
             })
-            .then(() => console.log("connected to DB"))
+            .then(() => console.log("Connected to DB"))
             .catch((err) => console.log("ERROR: ", err));
         const db = mongoose.connection;
         db.on("error", console.error.bind(console, "connection error:"));
@@ -158,7 +158,7 @@ class Server {
         // put here the private routes
         console.log("> Starting private routes");
         this.express.use("/api/admin", adminRoutes);
-        // this.express.use("/api/profile", profileModule);
+        this.express.use("/api/profile", profileModule);
 
         this.express.use("/api/*", (req, res, next) => {
             const err = new Error("Not Found");

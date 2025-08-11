@@ -1,4 +1,4 @@
-const Social = require("../models/social-request");
+const Social = require("../models/SocialRequest");
 
 const router = require("express").Router();
 
