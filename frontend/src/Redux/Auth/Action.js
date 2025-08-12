@@ -23,7 +23,7 @@ export const register = (userData) => async (dispatch) => {
 export const login = (userData) => async (dispatch) => {
   dispatch({ type: actionTypes.LOGIN_REQUEST });
   try {
-    const response = await axios.post(`${API_BASE_URL}/auth/signin`, userData);
+    const response = await axios.post(`${API_BASE_URL}/auth/login`, userData);
     const user = response.data;
     if (user.twoFactorAuthEnabled) {
       userData.navigate(`/two-factor-auth/${user.session}`);

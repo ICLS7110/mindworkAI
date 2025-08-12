@@ -45,8 +45,8 @@ class Server {
         this.initCache();
         this.initMiddleware();
         this.forceSecure();
-        // this.insertHelpers();
-        this.cronManager = new CronManager(this.io);
+        this.insertHelpers();
+        // this.cronManager = new CronManager(this.io);
         this.publicRoot = path.join("public");
         this.express.use(express.static(this.publicRoot));
         this.initPublicRoutes();

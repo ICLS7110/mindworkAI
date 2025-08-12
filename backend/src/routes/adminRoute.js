@@ -4,7 +4,7 @@ const { default: generateToken } = require("../utils/generateToken");
 const router = require("express").Router();
 
 // @desc create new admin
-router.post("/", async (req, res) => {
+router.post("/auth/", async (req, res) => {
     try {
         const { role, password } = req.body;
         const adminExists = await Admin.findOne({ role });
@@ -34,7 +34,7 @@ router.post("/", async (req, res) => {
 });
 
 // @desc login admin
-router.post("/login", async (req, res) => {
+router.post("/auth/login", async (req, res) => {
     try {
         const { role, password } = req.body;
 
@@ -58,7 +58,7 @@ router.post("/login", async (req, res) => {
 });
 
 // desc logout admin
-router.get("/logout", (req, res) => {
+router.get("/auth/logout", (req, res) => {
     res.clearCookie("adminSecret");
     res.status(200).json({
         message: "Logged out successfully!",

@@ -3,7 +3,7 @@ const User = require("../models/User");
 const router = require("express").Router();
 
 // get all users
-router.get("/", async (req, res) => {
+router.get("/auth/", async (req, res) => {
     try {
         const users = await User.find();
         res.status(200).json(users);
@@ -13,7 +13,7 @@ router.get("/", async (req, res) => {
 });
 
 // get one user
-router.get("/:id", async (req, res) => {
+router.get("/auth/:id", async (req, res) => {
     try {
         const user = await User.findById(req.params.id);
         res.status(200).json(user);
@@ -23,7 +23,7 @@ router.get("/:id", async (req, res) => {
 });
 
 // create new user
-router.post("/", async (req, res) => {
+router.post("/auth/signup", async (req, res) => {
     try {
         const newUser = new User(req.body);
         const user = await newUser.save();
