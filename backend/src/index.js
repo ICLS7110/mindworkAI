@@ -224,9 +224,9 @@ class Server {
     insertHelpers() {
         this.express.use((req, res, next) => {
             req.profile = async () => getProfileData(req);
-            req.solanaConnection = new Connection(
-                clusterApiUrl("mainnet-beta")
-            );
+            // req.solanaConnection = new Connection(
+            //     clusterApiUrl("mainnet-beta")
+            // );
             next();
         });
     }
