@@ -6,7 +6,7 @@ const LoginWithGoogle = () => {
 
   const handleGoogleLogin = async () => {
     try {
-      const response = await fetch('http://localhost:8000/api/login/google');
+      const response = await fetch('http://103.189.173.7:7521/api/login/google');
       const data = await response.json();
       // Check if token exists in response
       if (data.token) {
@@ -14,7 +14,7 @@ const LoginWithGoogle = () => {
         // localStorage.setItem('token', data.token);
         // Redirect user to dashboard or any other protected route
         // Example: history.push('/dashboard');
-        console.log("Redirect user to dashboard",data)
+        console.log("Redirect user to dashboard", data)
       } else {
         setError('Authentication failed');
       }
