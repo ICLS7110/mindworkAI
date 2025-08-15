@@ -212,6 +212,7 @@ class Server {
             if (global.rollbar) {
                 global.rollbar.error(err);
             }
+            console.log(err, "Errr")
             return res.send("ERROR: NOT FOUND");
         });
     }
